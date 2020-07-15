@@ -35,7 +35,9 @@
 // On iOS we cheat and pull in the header for UIDevice to get the selectors,
 // but call it via runtime since GTMSystemVersion is supposed to only depend on
 // Foundation.
+#if !TARGET_OS_WATCH
 #import "UIKit/UIDevice.h"
+#endif
 #endif
 
 static SInt32 sGTMSystemVersionMajor = 0;
